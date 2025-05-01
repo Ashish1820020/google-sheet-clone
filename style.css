@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.page-action-cont {
+    height: 3rem;
+    background-color: #218c74;
+    display: flex;
+    align-items: flex-end;
+}
+
+.page-action {
+    margin: .5rem;
+    color: #f1f2f6;
+}
+
+
+.sheet-action-cont {
+    height: 3rem;
+    background-color: #ecf0f1;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.sheet-action-cont>* {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.font-family-prop,
+.font-size-prop {
+    outline: none;
+    border: none;
+    padding: 0.2rem;
+    border-radius: 2px;
+}
+
+
+.formula-action-cont {
+    height: 2rem;
+    padding-left: 1rem;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+}
+
+.formula-action-cont>* {
+    display: inline-block;
+    margin-right: .7rem;
+}
+
+.formula-action-cont>input {
+    border: none;
+    outline: none;
+    height: 70%;
+    border-radius: 3px;
+}
+
+.formula-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.address-bar {
+    width: 5rem;
+}
+
+.formula-bar {
+    width: calc(100vw - 5rem - .7vw - .7vw);
+}
+
+
+.sheet-cont {
+    height: 3rem;
+    background-color: #ecf0f1;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.sheet-cont>* {
+    display: inline-block;
+}
+
+.sheet-add-icon {
+    width: 2vw;
+}
+
+.sheet-folder-cont {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: calc(100vw - 2vw);
+}
+
+.sheet-folder {
+    font-weight: bold;
+    font-size: .9rem;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+
+
+.grid-cont {
+    height: calc(100vh - 3rem - 2rem - 3rem - 3rem);
+    position: relative;
+    overflow: scroll;
+}
+
+.top-left-dummy-box {
+    height: 2rem;
+    width: 3rem;
+    background-color: #747d8c;
+    z-index: 2;
+}
+
+.address-column-cont {
+    width: 2rem;
+    z-index: 1;
+}
+
+.top-left-dummy-box,
+.address-column-cont {
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+
+.address-row-cont {
+    height: 2rem;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.cell-cont {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+}
+
+.address-col {
+    height: 2rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dfe4ea;
+}
+
+.address-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 6rem;
+    border: 1px solid #dfe4ea;
+}
+
+.row-cont {
+    display: flex;
+}
+
+.cell {
+    height: 2rem;
+    width: 6rem;
+    border: 1px solid #dfe4ea;
+    outline: none;
+    overflow: hidden;
+}
+.cell:focus {
+    border: 3px solid rgb(154, 154, 224);
+}
+
+
+
+
+
+.material-icons {
+    cursor: pointer;
+}

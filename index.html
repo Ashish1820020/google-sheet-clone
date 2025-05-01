@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>G-Sheet 1.0</title>
+</head>
+
+<body>
+    <div class="page-action-cont">
+        <div class="page-action">Home</div>
+        <div class="page-action">File</div>
+        <div class="page-action">Insert</div>
+        <div class="page-action">Layout</div>
+        <div class="page-action">Help</div>
+    </div>
+
+    <div class="sheet-action-cont">
+        <span class="material-icons">
+            content_copy
+        </span>
+        <span class="material-icons">
+            content_paste
+        </span>
+        <span class="material-icons">
+            content_cut
+        </span>
+        <select class="font-family-prop">
+            <option value="arial">Arial</option>
+            <option value="monospace">Monospace</option>
+            <option value="times-now-roman">Times New Roman</option>
+            <option value="sens-serif">Sens-Serif</option>
+            <option value="cursive">Cursive</option>
+        </select>
+        <select class="font-size-prop">
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="10">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+        </select>
+        <span class="material-icons">
+            format_bold
+        </span>
+        <span class="material-icons">
+            format_italic
+        </span>
+        <span class="material-icons">
+            format_underlined
+        </span>
+        <span class="material-icons">
+            format_align_left
+        </span>
+        <span class="material-icons">
+            format_align_center
+        </span>
+        <span class="material-icons">
+            format_align_right
+        </span>
+    </div>
+
+    <div class="formula-action-cont">
+        <input type="text" readonly class="address-bar">
+        <img class="formula-icon" width="50" height="50" src="https://img.icons8.com/ios/50/formula-fx.png" alt="formula-fx"/>
+        <input type="text" class="formula-bar">
+    </div>
+
+
+    <div class="grid-cont">
+        <div class="top-left-dummy-box"></div>
+        <div class="address-column-cont"></div>
+        <div class="cell-cont">
+            <div class="address-row-cont"></div>
+        </div>
+    </div>
+
+
+    <div class="sheet-cont">
+        <div class="sheet-add-icon">
+            <span class="material-icons">
+                post_add
+            </span>
+        </div>
+        <div class="sheet-folder-cont">
+            <div class="sheet-folder">Sheet1</div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
