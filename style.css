@@ -42,6 +42,19 @@ body {
     border-radius: 2px;
 }
 
+.color-prop-cont {
+    position: relative;
+    cursor: pointer;
+}
+.color-prop-cont > input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
 
 .formula-action-cont {
     height: 2rem;
@@ -125,7 +138,7 @@ body {
 }
 
 .address-column-cont {
-    width: 2rem;
+    width: 3rem;
     z-index: 1;
 }
 
@@ -148,7 +161,7 @@ body {
 .cell-cont {
     position: absolute;
     top: 0;
-    left: 2rem;
+    left: 3rem;
 }
 
 .address-col {

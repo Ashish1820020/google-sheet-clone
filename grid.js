@@ -27,10 +27,14 @@ for (let row = 0; row<rows; row++) {
         const cell = document.createElement("div");
         cell.setAttribute("class", "cell");
         cell.setAttribute("contenteditable", "true");
+        cell.setAttribute("tabindex", 0);        
+        cell.setAttribute("spellcheck", "false");
+        cell.setAttribute("rId", row+1);
+        cell.setAttribute("cId", col);
         addClickListnerForCell(cell, row, col);
         rowBar.appendChild(cell);
     }
-    cellCont.appendChild(rowBar)
+    cellCont.appendChild(rowBar);
 };
 
 function addClickListnerForCell (cell, i, j) {
@@ -38,5 +42,9 @@ function addClickListnerForCell (cell, i, j) {
     const rowId = String.fromCharCode(65+j);
     cell.addEventListener("click", () => {
         addressBar.value = `${rowId}${colId}`
-    })
-}
+    });
+};
+
+const cells = document.querySelectorAll(".cell");
+cells[0].click();
+cells[0].focus();

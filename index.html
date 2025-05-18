@@ -19,53 +19,79 @@
     </div>
 
     <div class="sheet-action-cont">
-        <span class="material-icons">
+        <span class="material-icons copy">
             content_copy
         </span>
-        <span class="material-icons">
+        <span class="material-icons paste">
             content_paste
         </span>
-        <span class="material-icons">
+        <span class="material-icons cut">
             content_cut
         </span>
-        <select class="font-family-prop">
-            <option value="arial">Arial</option>
+        <select class="font-family-prop font-family">
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Arial">Arial</option>
             <option value="monospace">Monospace</option>
-            <option value="times-now-roman">Times New Roman</option>
-            <option value="sens-serif">Sens-Serif</option>
+            <option value="sans-serif">Sans-Serif</option>
             <option value="cursive">Cursive</option>
         </select>
-        <select class="font-size-prop">
+        <select class="font-size-prop font-size">
             <option value="6">6</option>
             <option value="8">8</option>
             <option value="10">10</option>
             <option value="10">12</option>
             <option value="14">14</option>
             <option value="16">16</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+            <option value="22">22</option>
+            <option value="24">24</option>
+            <option value="26">26</option>
+            <option value="28">28</option>
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
         </select>
-        <span class="material-icons">
+        <span class="material-icons bold">
             format_bold
         </span>
-        <span class="material-icons">
+        <span class="material-icons italic">
             format_italic
         </span>
-        <span class="material-icons">
+        <span class="material-icons underline">
             format_underlined
         </span>
-        <span class="material-icons">
+        <span class="left material-icons alignment">
             format_align_left
         </span>
-        <span class="material-icons">
+        <span class="center material-icons alignment">
             format_align_center
         </span>
-        <span class="material-icons">
+        <span class="right material-icons alignment">
             format_align_right
         </span>
+        <div class="color-prop-cont">
+            <span class="material-icons font-color">
+                format_color_text
+            </span>
+            <input type="color" name="" class="font-color-input">
+        </div>
+        <div class="color-prop-cont">
+            <span class="material-icons bg-color">
+                format_color_fill
+            </span>
+            <input type="color" name="" class="bg-color-input">
+        </div>
+        <!-- <span class="material-icons">
+            format_underlined
+        </span> -->
     </div>
 
     <div class="formula-action-cont">
         <input type="text" readonly class="address-bar">
-        <img class="formula-icon" width="50" height="50" src="https://img.icons8.com/ios/50/formula-fx.png" alt="formula-fx"/>
+        <img class="formula-icon" width="50" height="50" src="https://img.icons8.com/ios/50/formula-fx.png"
+            alt="formula-fx" />
         <input type="text" class="formula-bar">
     </div>
 
@@ -89,7 +115,8 @@
             <div class="sheet-folder">Sheet1</div>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./grid.js"></script>
+    <script src="./cell-props.js"></script>
 </body>
 
 </html>
