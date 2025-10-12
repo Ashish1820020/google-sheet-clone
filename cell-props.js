@@ -12,7 +12,8 @@ const cellProps = Array.from({ length: rows }, () =>
         textColor: "#000000",
         bgColor: "#ffffff",
         fontFamily: "monospace",
-        fontSize: "14"
+        fontSize: "14",
+        value: ''
     }))
 );
 
