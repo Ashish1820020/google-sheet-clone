@@ -13,13 +13,15 @@ const cellProps = Array.from({ length: rows }, () =>
         bgColor: "#ffffff",
         fontFamily: "monospace",
         fontSize: "14",
-        value: ''
+        value: '',
+        formula: '',
+        children: []
     }))
 );
 
 // Utility functions
 const decodeRowIdAndColIdFromAddressStr = (address) => [
-    Number(address.slice(1)),
+    Number(address.slice(1)) - 1,
     address.charCodeAt(0) - 65
 ];
 
@@ -118,8 +120,13 @@ alignment.forEach((item) => {
 allCells.forEach((cell) => {
     cell.addEventListener("click", () => {
         const address = addressBar.value;
-        const [activeCell, props] = getActiveCellAndCellPropFromCellAddress(address);
-        applyCellStyles(activeCell, props);
-        updateToolbarStyles(props);
+        const [activeCell, cellProp] = getActiveCellAndCellPropFromCellAddress(address);
+        applyCellStyles(activeCell, cellProp);
+        updateToolbarStyles(cellProp);
+
+        let formulaBar = document.querySelector(".formula-bar");
+        formulaBar.value = cellProp.formula;
+        cell.innerText = cellProp.value;
+
     });
 });

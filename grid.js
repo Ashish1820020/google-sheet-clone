@@ -29,7 +29,7 @@ for (let row = 0; row<rows; row++) {
         cell.setAttribute("contenteditable", "true");
         cell.setAttribute("tabindex", 0);        
         cell.setAttribute("spellcheck", "false");
-        cell.setAttribute("rId", row+1);
+        cell.setAttribute("rId", row);
         cell.setAttribute("cId", col);
         addClickListnerForCell(cell, row, col);
         rowBar.appendChild(cell);
