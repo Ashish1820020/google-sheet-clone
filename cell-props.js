@@ -2,24 +2,13 @@
 const activeColor = "#d1d8e0";
 const inactiveColor = "#ecf0f1";
 
-// Cell properties matrix
-const cellProps = Array.from({ length: rows }, () =>
-    Array.from({ length: cols }, () => ({
-        bold: false,
-        italic: false,
-        underline: false,
-        alignment: "left",
-        textColor: "#000000",
-        bgColor: "#ffffff",
-        fontFamily: "monospace",
-        fontSize: "14",
-        value: '',
-        formula: '',
-        children: []
-    }))
-);
+let cellPropsContainer = []; // For multiple sheets support
+let cellProps = [];
 
-// Utility functions
+{
+    addSheetBtn.click();
+}
+
 const decodeRowIdAndColIdFromAddressStr = (address) => [
     Number(address.slice(1)) - 1,
     address.charCodeAt(0) - 65
@@ -126,7 +115,8 @@ allCells.forEach((cell) => {
 
         let formulaBar = document.querySelector(".formula-bar");
         formulaBar.value = cellProp.formula;
-        cell.innerText = cellProp.value;
+        if(cell.innerText !== cellProp.value)
+            cell.innerText = cellProp.value;
 
     });
 });

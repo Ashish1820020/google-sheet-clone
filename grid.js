@@ -1,6 +1,7 @@
 const cols = 26;
 const rows = 100;
 
+// Create Grid UI
 const addressColCont = document.querySelector(".address-column-cont");
 const addressRowCont = document.querySelector(".address-row-cont");
 const cellCont = document.querySelector(".cell-cont");
@@ -44,7 +45,3 @@ function addClickListnerForCell (cell, i, j) {
         addressBar.value = `${rowId}${colId}`
     });
 };
-
-const cells = document.querySelectorAll(".cell");
-cells[0].click();
-cells[0].focus();

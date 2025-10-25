@@ -36,10 +36,15 @@ formulaBar.addEventListener('keydown', async (event) => {
         // Add new formula to Graph Components
         addChildToGraphComponents(formula, address);
 
-        const isCyclic = isGraphCyclic()
+        const isCyclicResponse = isGraphCyclic()
 
-        if(isCyclic) {
-            alert("Your formula is cyclic");
+        if(isCyclicResponse) {
+            let trace = confirm("Your formula is cyclic. Do you want to trace the cycle path?") 
+            while(trace) {
+                await traceCyclicPath(graphComponents, isCyclicResponse);
+                trace = confirm("Your formula is cyclic. Do you want to trace the cycle path?") 
+            }
+
             // Remove the recently added formula from Graph Components
             removeChildFromGraphComponent(formula);
             return;
@@ -51,7 +56,6 @@ formulaBar.addEventListener('keydown', async (event) => {
         // Evaluate formula
         const evaluatedValue = evaluateFormula(formula);
         setCellValueAndFormula(evaluatedValue, formula);
-        console.log(cellProps);
 
         // Update dependent children
         updateChildrenCells(cellProp);
@@ -67,7 +71,6 @@ const addChildToGraphComponents = (formula, childAddress) => {
         const currentTokenAscii = token.charCodeAt(0);
         if (currentTokenAscii >= 65 && currentTokenAscii <= 90) {
             const [parentRowId, parentColId] = decodeRowIdAndColIdFromAddressStr(token);
-            console.log([childRowId, childColId])
             graphComponents[parentRowId][parentColId].push([childRowId, childColId]);
         }
     };

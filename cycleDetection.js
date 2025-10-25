@@ -1,12 +1,6 @@
+let graphComponentsContainer = []
 let graphComponents = []
 
-for (let i = 0; i < rows; i++) {
-    const row = [];
-    for (let j = 0; j < cols; j++) {
-        row.push([]);
-    }
-    graphComponents.push(row);
-}
 
 // Check if Graph is Cyclic
 const isGraphCyclic = () => {
@@ -29,12 +23,12 @@ const isGraphCyclic = () => {
             if (visited[i][j] === false) {
                 const response = detectCycle(graphComponents, i, j, visited, dfsVisited);
                 if (response === true) {
-                    return true;
+                    return [i, j];
                 }
             }
         }
     }
-    return false;
+    return null;
 }
 
 
@@ -49,19 +43,21 @@ const detectCycle = (graphComponents, srcr, srcc, visited, dfsVisited) => {
 
     const childrens = graphComponents[srcr][srcc];
 
-    for (index = 0; index < childrens.length; index++) {
+    for (let index = 0; index < childrens.length; index++) {
         const [crid, ccid] = childrens[index];
+        const cridNum = Number(crid);
+        const ccidNum = Number(ccid);
 
         // Check childs
-        if (visited[crid][ccid] === false) {
-            const isCyclic = detectCycle(graphComponents, crid, ccid, visited, dfsVisited);
+        if (visited[cridNum][ccidNum] === false) {
+            const isCyclic = detectCycle(graphComponents, cridNum, ccidNum, visited, dfsVisited);
             if (isCyclic === true) {
                 return true;
             }
         }  
         // already visited and in the same dfs path
         // 1 -> 2 -> 3 -> 1
-        else if (visited[crid][ccid] === true && dfsVisited[crid][ccid] === true) {
+        else if (visited[cridNum][ccidNum] === true && dfsVisited[cridNum][ccidNum] === true) {
             return true
         }
     }
