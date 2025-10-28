@@ -210,6 +210,9 @@ body {
 .cell:focus {
     border: 3px solid rgb(154, 154, 224);
 }
+.cell.selected-cell {
+    border: 3px solid rgb(154, 154, 224);
+}
 
 
 
